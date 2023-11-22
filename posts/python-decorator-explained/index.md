@@ -681,7 +681,7 @@ Python装饰器初看很简单，但是要构建一个通用且稳定的装饰�
 
 1. 2002年10月14日，Python 2.2.2 版本发布，引入了`staticmethod`和`classmethod`，使用方式[纯靠手动](https://www.python.org/download/releases/2.2.2/descrintro/#staticmethods)，如`foo = staticmethod(foo)`，期望未来会有一个语法来解决这个问题的种子在彼时就被埋下了。
 2. 2002年2月至2004年7月，与装饰器语法相关的讨论在社区持续进行，无数的提案被提交，如单词类的`as`、`using`等，符号类的`;...`、`<…>`、`|…`、`[…]`等，其中`[…]`是`@…`的强力竞争者。
-3. 2003年6月5日，定义装饰器规范的PEP 318[2]创建，彼时的标题还是`pep 318, Decorators for Functions, Methods and Classes`，PEP 318经多次修改，历时近14个月，最终只支持函数和方法装饰器。
+3. 2003年6月5日，定义装饰器规范的PEP 318[[2]]创建，彼时的标题还是`pep 318, Decorators for Functions, Methods and Classes`，PEP 318经多次修改，历时近14个月，最终只支持函数和方法装饰器。
 4. 2004年6月7日至9日，欧洲Python开发者大会召开，Python之父Guido携带社区提案到会上进行讨论，但仍未有结论。
 5. 2004年7月30号，”Pie-Thon”挑战（2003年Parrot虚拟机开发者Dag发起的挑战，比较Python通过Parrot虚拟机和CPython运行的性能）在OSCON上兑现，作为赢家的Guido可以往Dag脸上丢一个奶油派，社区普遍认为这个事件对Guido最终决定使用`@`具有重要作用，因而很多人称之为“命运之派“。
 6. 2004年8月2日，Anthony在Guido授意下提交了一版`@`[装饰器实现](https://mail.python.org/pipermail/python-dev/2004-August/046599.html)，因为形状类似派，Barry给它取了个外号叫”[派-装饰器](https://mail.python.org/pipermail/python-dev/2004-August/046613.html)“。
@@ -690,7 +690,7 @@ Python装饰器初看很简单，但是要构建一个通用且稳定的装饰�
 
 \[1\]. [维基百科：头等函数][1]  
 \[2\]. [PEP 318 – Decorators for Functions and Methods][2]  
-\[3\]. [Python documentation: User-defined functions][3]    
+\[3\]. [Python documentation: User-defined functions][3]  
 \[4\]. [Python documentation: functools.partial][4]  
 \[5\]. [Python documentation: partial-objects][5]  
 \[6\]. [Python Cookbook 3rd Edition: 9.6 带可选参数的装饰器][6]  
@@ -703,24 +703,24 @@ Python装饰器初看很简单，但是要构建一个通用且稳定的装饰�
 \[13\]. [PythonDecoratorLibrary][13]  
 \[14\]. [gist: add background task with task register decorator][14]  
 
-[1]: https://zh.wikipedia.org/wiki/%E5%A4%B4%E7%AD%89%E5%87%BD%E6%95%B0
-[2]:  https://peps.python.org/pep-0318/
+[1]:https://zh.wikipedia.org/wiki/%E5%A4%B4%E7%AD%89%E5%87%BD%E6%95%B0
+[2]:https://peps.python.org/pep-0318/
 [3]:https://docs.python.org/3/reference/datamodel.html?highlight=__doc__#user-defined-functions
 [4]:https://docs.python.org/3/library/functools.html#functools.partial
 [5]:https://docs.python.org/3/library/functools.html#partial-objects
 [6]:https://python3-cookbook.readthedocs.io/zh-cn/latest/c09/p06_define_decorator_that_takes_optional_argument.html
-[7]: https://peps.python.org/pep-3129/
+[7]:https://peps.python.org/pep-3129/
 [8]:https://realpython.com/primer-on-python-decorators/
-[9]: https://docs.python.org/3/glossary.html#term-callable
+[9]:https://docs.python.org/3/glossary.html#term-callable
 [10]:https://docs.python.org/3/reference/datamodel.html#emulating-callable-objects
-[11]: https://tech.people-doc.com/python-class-based-decorators.html
+[11]:https://tech.people-doc.com/python-class-based-decorators.html
 [12]:https://coolshell.cn/articles/11265.html
-[13]: https://wiki.python.org/moin/PythonDecoratorLibrary
-[14]: https://gist.github.com/will4j/21f8cefbd32ea5684cb9353521cabceb
+[13]:https://wiki.python.org/moin/PythonDecoratorLibrary
+[14]:https://gist.github.com/will4j/21f8cefbd32ea5684cb9353521cabceb
 
 
 ---
 
 > 作者: [水王](https://github.com/will4j)  
-> URL: https://will4j.github.io/posts/explain-python-decorator-in-detail/  
+> URL: https://will4j.github.io/posts/python-decorator-explained/  
 

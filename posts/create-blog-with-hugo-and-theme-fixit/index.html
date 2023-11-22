@@ -1,0 +1,612 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>使用 Hugo 和 FixIt 主题创建个人博客 - 程序员水王</title><meta name=author content="水王">
+<meta name=author-link content="https://github.com/will4j"><meta name=description content="记录使用 hugo 和 FixIt 主题搭建博客的过程。"><meta name=keywords content="hugo,FixIt,blog,GitHub Pages"><meta itemprop=name content="使用 Hugo 和 FixIt 主题创建个人博客"><meta itemprop=description content="记录使用 hugo 和 FixIt 主题搭建博客的过程。"><meta itemprop=datePublished content="2023-11-20T12:38:29+08:00"><meta itemprop=dateModified content="2023-11-22T14:34:16+08:00"><meta itemprop=wordCount content="4055"><meta itemprop=keywords content="Hugo,FixIt,"><meta property="og:title" content="使用 Hugo 和 FixIt 主题创建个人博客"><meta property="og:description" content="记录使用 hugo 和 FixIt 主题搭建博客的过程。"><meta property="og:type" content="article"><meta property="og:url" content="https://will4j.github.io/posts/create-blog-with-hugo-and-theme-fixit/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-11-20T12:38:29+08:00"><meta property="article:modified_time" content="2023-11-22T14:34:16+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="使用 Hugo 和 FixIt 主题创建个人博客"><meta name=twitter:description content="记录使用 hugo 和 FixIt 主题搭建博客的过程。"><meta name=application-name content="程序员水王"><meta name=apple-mobile-web-app-title content="程序员水王"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical href=https://will4j.github.io/posts/create-blog-with-hugo-and-theme-fixit/><link rel=prev href=https://will4j.github.io/posts/python-decorator-explained/><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"使用 Hugo 和 FixIt 主题创建个人博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/will4j.github.io\/posts\/create-blog-with-hugo-and-theme-fixit\/"},"genre":"posts","keywords":"Hugo, FixIt","wordcount":4055,"url":"https:\/\/will4j.github.io\/posts\/create-blog-with-hugo-and-theme-fixit\/","datePublished":"2023-11-20T12:38:29+08:00","dateModified":"2023-11-22T14:34:16+08:00","license":"by 水王","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"水王"},"description":"记录使用 hugo 和 FixIt 主题搭建博客的过程。"}</script></head><body data-header-desktop=sticky data-header-mobile=auto><script>(window.localStorage?.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("data-theme","dark")</script><div class=wrapper data-page-style=normal><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper data-github-corner=left><div class=header-title><a href=/ title=程序员水王><span class=header-title-pre><i class="fa fa-code">&nbsp</i></span><span id=typeit-header-desktop class=typeit></span></a><span class=header-subtitle></span></div><nav><ul class=menu><li class=menu-item><a class=menu-link href=/><i class="fa-solid fa-home fa-fw fa-sm" aria-hidden=true></i> 首页</a></li><li class=menu-item><a class=menu-link href=/posts/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 文章</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-th-list fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容…… id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></li><li class="menu-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=程序员水王><span class=header-title-pre><i class="fa fa-code">&nbsp</i></span><span id=typeit-header-title-mobile class=typeit></span></a><span class=header-subtitle></span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容…… id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></li><li class=menu-item><a class=menu-link href=/><i class="fa-solid fa-home fa-fw fa-sm" aria-hidden=true></i> 首页</a></li><li class=menu-item><a class=menu-link href=/posts/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 文章</a></li><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-th-list fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span></li></ul></nav></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><nav aria-label=breadcrumb class=breadcrumb-container><ol class=breadcrumb><li class=breadcrumb-item><a href=/posts/ title=文章>文章</a></li><li class="breadcrumb-item active" aria-current=page>使用 Hugo 和 FixIt 主题创建个人博客</li></ol></nav><main class=container><aside class=toc id=toc-auto><h2 class=toc-title>目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside><aside class=aside-custom></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>使用 Hugo 和 FixIt 主题创建个人博客</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://github.com/will4j title=作者 target=_blank rel="external nofollow noopener noreferrer author" class=author><img loading=lazy src=/img/avatar.png data-title=水王 data-alt=水王 class=avatar style="background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'>&nbsp;水王</a></span>
+<span class=post-category>收录于 <a href=/categories/blog-build/><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> 建站笔记</a></span></div><div class=post-meta-line><span title="发布于 2023-11-20 12:38:29"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden=true></i><time datetime=2023-11-20>2023-11-20</time></span>&nbsp;<span title="更新于 2023-11-22 14:34:16"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden=true></i><time datetime=2023-11-22>2023-11-22</time></span>&nbsp;<span title="4055 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden=true></i>约 4100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden=true></i>预计阅读 9 分钟</span>&nbsp;<span id=busuanzi_container_page_pv class="busuanzi_visitors comment-visitors" data-flag-title="使用 Hugo 和 FixIt 主题创建个人博客">
+<i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_page_pv>-</span>&nbsp;次阅读
+</span>&nbsp;</div></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ol><li><a href=#环境安装>环境安装</a></li><li><a href=#博客创建>博客创建</a><ol><li><a href=#github-仓库准备>GitHub 仓库准备</a></li><li><a href=#博客站点创建>博客站点创建</a></li><li><a href=#文章创建及预览>文章创建及预览</a></li></ol></li><li><a href=#博客配置>博客配置</a><ol><li><a href=#顶部菜单>顶部菜单</a></li><li><a href=#搜索支持>搜索支持</a></li><li><a href=#博客标题>博客标题</a></li><li><a href=#首页资料>首页资料</a></li><li><a href=#中文语言>中文语言</a></li><li><a href=#作者信息>作者信息</a></li><li><a href=#分类别名>分类别名</a></li><li><a href=#页脚配置>页脚配置</a></li><li><a href=#阅读数统计>阅读数统计</a></li><li><a href=#cdn-加速>CDN 加速</a></li></ol></li><li><a href=#博客部署>博客部署</a></li><li><a href=#总结>总结</a></li><li><a href=#参考资料>参考资料</a></li></ol></nav></div></div><div class=content id=content><p>Hugo[<a href=https://gohugo.io/about/what-is-hugo/ target=_blank rel="external nofollow noopener noreferrer">1</a>]是一个用 go 语言编写的开源[<a href=https://github.com/gohugoio/hugo target=_blank rel="external nofollow noopener noreferrer">2</a>]网站构建框架，截止目前GitHub星数超过70k，它具有功能强大的模板系统、丰富的主题、完善的文档以及全平台支持的客户端，提供开箱即用的分类系统、评论系统、代码高亮、多语言支持等功能，非常适合用来搭建博客网站。</p><p>在本地撰写阶段，借助 Hugo 内置服务器可以做到毫秒级热更新，实现所见即所得。同时，得益于 Hugo 采用静态站点生成[<a href=https://gohugo.io/about/benefits/ target=_blank rel="external nofollow noopener noreferrer">3</a>]的架构，Hugo 站点可以很容易的部署到各种 HTTP 服务器，且通过本地预览即可确认线上部署效果。</p><p>基于成本和使用习惯考虑，选择使用 GitHub Pages 进行部署，并且根据功能不同进行仓库拆分。话不多说，来开始吧。</p><h2 id=环境安装>环境安装</h2><p>Hugo 分为标准和扩展两个版本，扩展版支持 WebP 图像处理以及 Dart Sass，这里我们选择安装扩展版本。</p><p>参考官方安装指南[<a href=https://gohugo.io/installation/ target=_blank rel="external nofollow noopener noreferrer">4</a>]，前置准备需要安装 Git、Go 和 Dart Sass [<a href=https://gohugo.io/hugo-pipes/transpile-sass-to-css/#dart-sass target=_blank rel="external nofollow noopener noreferrer">5</a>]，mac系统可直接使用 homebrew 进行安装，我的电脑上 Git 和 Go 已经安装好，只需要安装 Dart Sass：</p><div class=highlight id=id-1><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 添加 tap 源</span>
+</span></span><span class=line><span class=cl>$ brew tap sass/sass
+</span></span><span class=line><span class=cl><span class=c1># 安装 Dart Sass</span>
+</span></span><span class=line><span class=cl>$ brew install sass/sass/sass
+</span></span><span class=line><span class=cl><span class=c1># 验证</span>
+</span></span><span class=line><span class=cl>$ sass --version
+</span></span><span class=line><span class=cl>1.69.5</span></span></code></pre></td></tr></table></div></div><p>安装 Hugo：</p><div class=highlight id=id-2><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># Hugo 安装</span>
+</span></span><span class=line><span class=cl>$ brew install hugo
+</span></span><span class=line><span class=cl><span class=c1># 验证</span>
+</span></span><span class=line><span class=cl>$ hugo version
+</span></span><span class=line><span class=cl>hugo v0.120.4-f11bca5fec2ebb3a02727fb2a5cfb08da96fd9df+extended darwin/arm64 <span class=nv>BuildDate</span><span class=o>=</span>2023-11-08T11:18:07Z <span class=nv>VendorInfo</span><span class=o>=</span>brew</span></span></code></pre></td></tr></table></div></div><p>可以看到 hugo 版本信息中包含 +extended 信息，说明安装的是 Hugo 扩展版。</p><h2 id=博客创建>博客创建</h2><p>从 Hugo 主题站[<a href=https://themes.gohugo.io/ target=_blank rel="external nofollow noopener noreferrer">6</a>]挑选自己喜欢的主题，大多数主题都有 demo 可以体验，我选的是 <a href=https://themes.gohugo.io/themes/fixit/ target=_blank rel="external nofollow noopener noreferrer">FixIt</a>。</p><h3 id=github-仓库准备>GitHub 仓库准备</h3><p>接下来创建三个 GitHub 仓库：</p><ol><li>GitHub Pages 仓库：仓库名前缀必须使用用户名，格式为&lt;username>.github.io，必须为公开仓库，用于博客部署。</li><li>博客仓库：可随意命名如 myblog，私有仓库，用于存储博客源代码，包括文章和配置。</li><li>主题仓库：从 FixIt 源代码库[<a href=https://github.com/hugo-fixit/FixIt target=_blank rel="external nofollow noopener noreferrer">7</a>] fork，用于自定义配置主题，另外我 fork 过来后将默认分支从 master 重命名成了 main。</li></ol><p>三个仓库的关系如图所示：</p><p><img loading=lazy src=/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-github-repos.png srcset="/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-github-repos.png?size=small, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-github-repos.png?size=medium 1.5x, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-github-repos.png?size=large 2x" sizes=auto data-title="Hugo GitHub 仓库" data-alt="Hugo GitHub 仓库" style="--width:1183px;--aspect-ratio:1183 / 564;background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>博客仓库将主题以 submodule 的形式导入到 themes 文件夹，通过配置文件指定使用的主题；当博客仓库的代码提交到 main 分支时，会触发 GitHub Actions 将 Hugo 构建好的静态站点文件部署到 GitHub Pages 仓库，用户即可通过 GitHub Pages 域名进行博客访问。</p><p>三个仓库中，只有 GitHub pages 仓库是必须的，如果不在意博客内容和源代码隐私性，可以去掉 myblog 仓库，将博客源代码存储到 &lt;username>.github.io 仓库中，GitHub Pages 支持使用特定分支（默认是 gh-pages）部署。如果不准备自定义修改主题，可以去掉 FixIt 仓库，直接使用官方源代码仓库或者通过 Hugo module 进行主题安装。</p><h3 id=博客站点创建>博客站点创建</h3><p>仓库准备好之后，可以通过 Hugo 命令行工具[<a href=https://gohugo.io/commands/hugo/ target=_blank rel="external nofollow noopener noreferrer">8</a>]快速创建站点，Hugo 默认使用 toml 格式配置，同时支持 yaml 和 json，我的博客使用 yaml：</p><div class=highlight id=id-3><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ hugo new site --format yaml myblog
+</span></span><span class=line><span class=cl><span class=c1># 切换到博客仓库目录</span>
+</span></span><span class=line><span class=cl>$ <span class=nb>cd</span> myblog
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 初始化 git 仓库</span>
+</span></span><span class=line><span class=cl>$ git init
+</span></span><span class=line><span class=cl>$ git add .
+</span></span><span class=line><span class=cl>$ git commit -m <span class=s2>&#34;feat: init hugo site&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 绑定远程博客仓库</span>
+</span></span><span class=line><span class=cl>$ git remote add origin git@github.com:will4j/myblog.git
+</span></span><span class=line><span class=cl>$ git push -u origin main
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 增加主题子模块</span>
+</span></span><span class=line><span class=cl><span class=c1># 这里因为 fork 主题仓库跟博客仓库在同一目录下，采用相对路径引入</span>
+</span></span><span class=line><span class=cl>$ git submodule add ../FixIt.git themes/FixIt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置主题</span>
+</span></span><span class=line><span class=cl>$ <span class=nb>echo</span> <span class=s2>&#34;theme: FixIt&#34;</span> &gt;&gt; hugo.yaml
+</span></span><span class=line><span class=cl>$ cat hugo.yaml
+</span></span><span class=line><span class=cl>baseURL: https://example.org/
+</span></span><span class=line><span class=cl>languageCode: en-us
+</span></span><span class=line><span class=cl>title: My New Hugo Site
+</span></span><span class=line><span class=cl>theme: FixIt</span></span></code></pre></td></tr></table></div></div><p>Hugo 默认的站点目录结构[<a href=https://gohugo.io/getting-started/directory-structure/ target=_blank rel="external nofollow noopener noreferrer">9</a>]如下：</p><ul><li>archetypes：原型目录，用于定义各种类型的内容模板。原型匹配顺序是优先本站点内，其次再到主题内查找。</li><li>assets：资产目录，用于放置 CSS，JavaScript 等全局资源库。</li><li>config：配置文件目录，主配置文件 hugo.yaml，支持多文件配置、多环境配置[<a href=https://gohugo.io/getting-started/configuration/#configuration-directory target=_blank rel="external nofollow noopener noreferrer">10</a>]。</li><li>content：内容目录，用于放置文章、分类、标签等内容页面。</li><li>data：数据目录，用于存取自定义配置数据。</li><li>i18n：国际化目录，用于页面文本的多语言翻译。</li><li>layouts：布局目录，用于放置 html 模板。</li><li>public：部署目录，用于存放 Hugo 构建的静态站点文件。</li><li>resources：资源目录，包含 Hugo 资产构建流水线产生的可缓存文件，如 CSS、图片等。</li><li>static：静态资源目录，该目录下的文件会被直接拷贝到站点根目录。</li><li>themes：主题目录，包含 Hugo 站点可以使用的主题。</li></ul><p>可通过 Hugo mounts 配置[<a href=https://gohugo.io/hugo-modules/configuration/#module-configuration-mounts target=_blank rel="external nofollow noopener noreferrer">11</a>]自定义站点目录结构。</p><h3 id=文章创建及预览>文章创建及预览</h3><p>Hugo 支持 Page bundles [<a href=https://gohugo.io/content-management/page-bundles/ target=_blank rel="external nofollow noopener noreferrer">12</a>]模式，即文章内容打包在一个文件夹下，内部可以独立包含图片、子页面等静态资源，文章以 index.md 作为入口，可基于 FixIt 主题提供的 post-bundle 原型进行自定义修改：</p><div class=highlight id=id-4><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 拷贝主题原型到站点目录</span>
+</span></span><span class=line><span class=cl>$ cp -r themes/FixIt/archetypes/post-bundle archetypes
+</span></span><span class=line><span class=cl><span class=c1># 增加博客图片目录，最终结构如下，注意空目录在原型使用时不会生效</span>
+</span></span><span class=line><span class=cl>$ tree -a archetypes/post-bundle
+</span></span><span class=line><span class=cl>archetypes/post-bundle
+</span></span><span class=line><span class=cl>├── images
+</span></span><span class=line><span class=cl>│   └── .gitkeep
+</span></span><span class=line><span class=cl>└── index.md
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 创建 Page bundles 文章</span>
+</span></span><span class=line><span class=cl>$ hugo new content --kind post-bundle posts/hello-world
+</span></span><span class=line><span class=cl><span class=c1># 文章目录结构</span>
+</span></span><span class=line><span class=cl>$ tree -a content/posts/hello-world
+</span></span><span class=line><span class=cl>content/posts/hello-world
+</span></span><span class=line><span class=cl>├── images
+</span></span><span class=line><span class=cl>│   └── .gitkeep
+</span></span><span class=line><span class=cl>└── index.md
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 添加 markdown 内容</span>
+</span></span><span class=line><span class=cl>$ <span class=nb>echo</span> <span class=s2>&#34;\n## Hello World&#34;</span> &gt;&gt; content/posts/hello-world/index.md</span></span></code></pre></td></tr></table></div></div><p>上面的命令已经成功配置主题并创建了一篇文章，现在可以通过<code>hugo server --buildDrafts</code>命令启动本地预览服务，访问启动信息中显示的地址，如<code>http://localhost:1313</code>，进入首页，点击文章即可预览博客：</p><p><img loading=lazy src=/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-init.jpg srcset="/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-init.jpg?size=small, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-init.jpg?size=medium 1.5x, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-init.jpg?size=large 2x" sizes=auto data-title="Hugo 第一篇文章" data-alt="Hugo 第一篇文章" style="--width:2106px;--aspect-ratio:2106 / 1308;background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>查看文章 index.md，其内容分为两部分：前置页[<a href=https://gohugo.io/content-management/front-matter/ target=_blank rel="external nofollow noopener noreferrer">13</a>]和文章主体。前置页用于配置文章元数据，如标题、分类、标签等显示设置以及评论是否开启等控制开关，文章主体是 markdown 内容。下面是一段前置页示例，yaml 格式前置页由<code>---</code>包裹：</p><div class=highlight id=id-5><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># content/posts/hello-world/index.md</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 文章标题</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=l>Index</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 文章创建时间</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>date</span><span class=p>:</span><span class=w> </span><span class=ld>2023-11-22T06:51:28</span><span class=m>+08</span><span class=p>:</span><span class=m>00</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 是否草稿</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>draft</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># 标签和分类</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>tags</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>draft</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>categories</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>draft</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span></span></span></code></pre></td></tr></table></div></div><p>前置页除了 Hugo 预定义的标签外，也支持用户自定义标签，比如 FixIt 主题就定义了很多自定义前置页标签[<a href=https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter target=_blank rel="external nofollow noopener noreferrer">14</a>]。</p><p>至此，博客站点的基本框架就搭起来了。</p><h2 id=博客配置>博客配置</h2><p>通过 Hugo 和 FixIt 主题配置来调整博客显示布局，配置文件目录如下：</p><div class=highlight id=id-6><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ tree -a config/_default
+</span></span><span class=line><span class=cl>config/_default
+</span></span><span class=line><span class=cl>├── author.yaml <span class=c1># 作者信息配置</span>
+</span></span><span class=line><span class=cl>├── hugo.yaml <span class=c1># Hugo 主配置</span>
+</span></span><span class=line><span class=cl>├── languages.yaml <span class=c1># 多语言配置</span>
+</span></span><span class=line><span class=cl>├── menus.yaml <span class=c1># 菜单配置，菜单也支持多语言，当前只配置中文</span>
+</span></span><span class=line><span class=cl>├── module.yaml <span class=c1># 模块、目录挂载配置等</span>
+</span></span><span class=line><span class=cl>├── outputs.yaml <span class=c1># 输出格式配置</span>
+</span></span><span class=line><span class=cl>├── params.yaml <span class=c1># 额外参数配置，主题配置主要在这个文件</span>
+</span></span><span class=line><span class=cl>├── permalinks.yaml <span class=c1># 站点路径映射</span>
+</span></span><span class=line><span class=cl>└── sitemap.yaml <span class=c1># 站点地图配置，主要用于 seo 优化</span></span></span></code></pre></td></tr></table></div></div><p>配置文件来源于 Hugo 定义变量[<a href=https://gohugo.io/getting-started/configuration/#all-configuration-settings target=_blank rel="external nofollow noopener noreferrer">15</a>] 和 FixIt 主题定义变量[<a href=https://fixit.lruihao.cn/documentation/basics/#theme-configuration target=_blank rel="external nofollow noopener noreferrer">16</a>]。最终展示效果如下：</p><p><img loading=lazy src=/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-upgrade.jpg srcset="/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-upgrade.jpg?size=small, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-upgrade.jpg?size=medium 1.5x, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-site-upgrade.jpg?size=large 2x" sizes=auto data-title="Hugo 站点最终效果" data-alt="Hugo 站点最终效果" style="--width:2106px;--aspect-ratio:2106 / 1304;background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><h3 id=顶部菜单>顶部菜单</h3><p>创建首页、文章、分类和标签四个菜单，调整中文命名。FixIt 主题支持 FontAwesome 图标[<a href=https://fontawesome.com/icons target=_blank rel="external nofollow noopener noreferrer">17</a>]，可以根据个人喜好挑选。</p><div class=highlight id=id-7><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/menus.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://gohugo.io/content-management/menus</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://gohugo.io/content-management/multilingual/#menus</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://fixit.lruihao.cn/documentation/basics/#menu-configuration</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://fontawesome.com/icons</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>main</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>home</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>首页</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>/</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>icon</span><span class=p>:</span><span class=w> </span><span class=l>fa-solid fa-home</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>posts</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>文章</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>/posts/</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>draft</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>icon</span><span class=p>:</span><span class=w> </span><span class=l>fa-solid fa-archive</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>categories</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>分类</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>/categories/</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>icon</span><span class=p>:</span><span class=w> </span><span class=l>fa-solid fa-th-list</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>tags</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>标签</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>/tags/</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>icon</span><span class=p>:</span><span class=w> </span><span class=l>fa-solid fa-tags</span></span></span></code></pre></td></tr></table></div></div><h3 id=搜索支持>搜索支持</h3><p>FixIt 主题支持 Lunr.js、algolia 和 Fuse.js 三种搜索方式。</p><p>前置条件需要增加 json 输出格式，以生成搜索依赖的 index.json：</p><div class=highlight id=id-8><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/outputs.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://gohugo.io/templates/output-formats/#customizing-output-formats</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://gohugo.io/templates/output-formats/#output-format-definitions</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>home</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>html</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>rss</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>json</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>page</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>html</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>markdown</span></span></span></code></pre></td></tr></table></div></div><p>配置使用 Fuse.js 搜索，忽略大小写：</p><div class=highlight id=id-9><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/params.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://fixit.lruihao.cn/documentation/basics/#search-configuration</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>search</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>fuse</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>fuse</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c># https://fusejs.io/api/options.html</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>isCaseSensitive</span><span class=p>:</span><span class=w> </span><span class=kc>false</span></span></span></code></pre></td></tr></table></div></div><h3 id=博客标题>博客标题</h3><p>修改默认顶部标题，去除 logo，使用 fa 图标，增加打字特效：</p><div class=highlight id=id-10><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/params.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>header</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>title</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>logo</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Programmer William Wang</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>pre</span><span class=p>:</span><span class=w> </span><span class=l>&lt;i class=&#34;fa fa-code&#34;&gt;&amp;nbsp&lt;/i&gt;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>typeit</span><span class=p>:</span><span class=w> </span><span class=kc>true</span></span></span></code></pre></td></tr></table></div></div><p>在标题左边增加 GitHub 角：</p><div class=highlight id=id-11><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/params.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>githubCorner</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>permalink</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://github.com/will4j&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Visit Me on GitHub&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>position</span><span class=p>:</span><span class=w> </span><span class=l>left</span></span></span></code></pre></td></tr></table></div></div><h3 id=首页资料>首页资料</h3><p>在首页展示个人头像和联系方式：</p><div class=highlight id=id-12><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/params.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>home</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>profile</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>subtitle</span><span class=p>:</span><span class=w> </span><span class=l>The last leg of a journey just marks the halfway point.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>avatarMenu</span><span class=p>:</span><span class=w> </span><span class=l>github</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>avatarURL</span><span class=p>:</span><span class=w> </span><span class=l>/img/avatar.png</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>social</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>GitHub</span><span class=p>:</span><span class=w> </span><span class=l>will4j</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>Email</span><span class=p>:</span><span class=w> </span><span class=l>williamw0825@gmail.com</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>RSS</span><span class=p>:</span><span class=w> </span><span class=kc>true</span></span></span></code></pre></td></tr></table></div></div><h3 id=中文语言>中文语言</h3><p>在主配置文件中定义站点默认语言：</p><div class=highlight id=id-13><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/hugo.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Content without language indicator will default to this language.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>defaultContentLanguage</span><span class=p>:</span><span class=w> </span><span class=l>zh-cn</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>languageCode</span><span class=p>:</span><span class=w> </span><span class=l>en</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>defaultContentLanguageInSubdir</span><span class=p>:</span><span class=w> </span><span class=kc>false</span></span></span></code></pre></td></tr></table></div></div><p>通过多语言配置文件单独配置中文：</p><div class=highlight id=id-14><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/languages.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://gohugo.io/content-management/multilingual/#configure-languages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>zh-cn</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># 这里大小写很重要，定义网站 html lang</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>languageCode</span><span class=p>:</span><span class=w> </span><span class=l>zh-CN</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>languageName</span><span class=p>:</span><span class=w> </span><span class=l>简体中文</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># If true, auto-detect Chinese/Japanese/Korean Languages in the content.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># This will make .Summary and .WordCount behave correctly for CJK languages.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>hasCJKLanguage</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=l>程序员水王</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=l>程序员水王的个人博客</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>home</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>profile</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>subtitle</span><span class=p>:</span><span class=w> </span><span class=l>行百里者半九十。</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>header</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>title</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>程序员水王</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>app</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=l>程序员水王</span></span></span></code></pre></td></tr></table></div></div><h3 id=作者信息>作者信息</h3><p>配置文章作者的名称、头像等信息：</p><div class=highlight id=id-15><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/author.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>水王</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>email</span><span class=p>:</span><span class=w> </span><span class=l>williamw0825@gmail.com</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>link</span><span class=p>:</span><span class=w> </span><span class=l>https://github.com/will4j</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>avatar</span><span class=p>:</span><span class=w> </span><span class=l>img/avatar.png</span></span></span></code></pre></td></tr></table></div></div><p>头像图片放置到 assets 目录下：</p><div class=highlight id=id-16><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ tree -a assets
+</span></span><span class=line><span class=cl>assets
+</span></span><span class=line><span class=cl>└── img
+</span></span><span class=line><span class=cl>    └── avatar.png</span></span></code></pre></td></tr></table></div></div><h3 id=分类别名>分类别名</h3><p>在 categories 目录下创建分类名称文件夹及对应 _index.md：</p><div class=highlight id=id-17><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ tree -a content/categories
+</span></span><span class=line><span class=cl>content/categories
+</span></span><span class=line><span class=cl>├── _index.md
+</span></span><span class=line><span class=cl>└── blog-build
+</span></span><span class=line><span class=cl>    └── _index.md</span></span></code></pre></td></tr></table></div></div><div class=highlight id=id-18><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># content/categories/_index.md</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>slug</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;categories&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;分类&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span></span></span></code></pre></td></tr></table></div></div><div class=highlight id=id-19><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># content/categories/blog-build/_index.md</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>slug</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;blog-build&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;建站笔记&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;博客建站过程记录&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span></span></span></code></pre></td></tr></table></div></div><h3 id=页脚配置>页脚配置</h3><p>页脚增加站点运行时长统计、开源证书配置等：</p><div class=highlight id=id-20><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/params.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>footer</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>since</span><span class=p>:</span><span class=w> </span><span class=m>2023</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>hugo</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>siteTime</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>value</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;2023-11-16T07:40:29+08:00&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>visitor</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>license</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;&lt;a rel=&#34;license external nofollow noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>order</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>powered</span><span class=p>:</span><span class=w> </span><span class=m>1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>copyright</span><span class=p>:</span><span class=w> </span><span class=l>last</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>statistics</span><span class=p>:</span><span class=w> </span><span class=l>first</span></span></span></code></pre></td></tr></table></div></div><p>其中，修改 FixIt 主题，增加了<code>footer.visitor.enable</code>参数，用于在开启不蒜子时隐藏全站访问量统计：</p><div class=highlight id=id-21><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl># themes/FixIt/layouts/partials/footer.html
+</span></span><span class=line><span class=cl>-- {{- if eq .Site.Params.ibruce.enable true -}}
+</span></span><span class=line><span class=cl>++ {{- if .Site.Params.ibruce.enable | and .Site.Params.footer.visitor.enable -}}</span></span></code></pre></td></tr></table></div></div><h3 id=阅读数统计>阅读数统计</h3><p>开启不蒜子访问统计：</p><div class=highlight id=id-22><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/params.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Busuanzi count</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>ibruce</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>enable</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>enablePost</span><span class=p>:</span><span class=w> </span><span class=kc>true</span></span></span></code></pre></td></tr></table></div></div><h3 id=cdn-加速>CDN 加速</h3><p>使用 jsdelivr 对 css、js 库的静态资源进行 cdn 加速：</p><div class=highlight id=id-23><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># config/_default/params.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://fixit.lruihao.cn/documentation/basics/#cdn-configuration</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>cdn</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>data</span><span class=p>:</span><span class=w> </span><span class=l>jsdelivr.yml</span></span></span></code></pre></td></tr></table></div></div><h2 id=博客部署>博客部署</h2><p>首先需要配置部署密钥[<a href=https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/managing-deploy-keys#set-up-deploy-keys target=_blank rel="external nofollow noopener noreferrer">18</a>]，在 GitHub Pages 仓库添加公钥，并允许写入权限：</p><p><img loading=lazy src=/posts/create-blog-with-hugo-and-theme-fixit/images/add-deploy-key.jpg srcset="/posts/create-blog-with-hugo-and-theme-fixit/images/add-deploy-key.jpg?size=small, /posts/create-blog-with-hugo-and-theme-fixit/images/add-deploy-key.jpg?size=medium 1.5x, /posts/create-blog-with-hugo-and-theme-fixit/images/add-deploy-key.jpg?size=large 2x" sizes=auto data-title=添加部署密钥 data-alt=添加部署密钥 style="--width:1660px;--aspect-ratio:1660 / 1126;background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>在博客仓库添加 Actions 密钥中添加 GitHub Pages 仓库私钥：</p><p><img loading=lazy src=/posts/create-blog-with-hugo-and-theme-fixit/images/new-repo-secret.jpg srcset="/posts/create-blog-with-hugo-and-theme-fixit/images/new-repo-secret.jpg?size=small, /posts/create-blog-with-hugo-and-theme-fixit/images/new-repo-secret.jpg?size=medium 1.5x, /posts/create-blog-with-hugo-and-theme-fixit/images/new-repo-secret.jpg?size=large 2x" sizes=auto data-title=添加仓库密钥 data-alt=添加仓库密钥 style="--width:1646px;--aspect-ratio:1646 / 828;background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><p>在博客仓库增加 GitHub Actions [<a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/ target=_blank rel="external nofollow noopener noreferrer">19</a>]：</p><div class=highlight id=id-24><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># .github/workflows/deploy-to-github-pages.yaml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy to Github Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=l>main ]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Allows you to run this workflow manually from the Actions tab</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>permissions</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>contents</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>metadata</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>packages</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-22.04</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>concurrency</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>group</span><span class=p>:</span><span class=w> </span><span class=l>${{ github.workflow }}-${{ github.ref }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>HUGO_VERSION</span><span class=p>:</span><span class=w> </span><span class=m>0.120.4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install Dart Sass</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>sudo snap install dart-sass</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Go</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-go@v4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>go-version</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;^1.21.4&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>go version</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-hugo@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>hugo-version</span><span class=p>:</span><span class=w> </span><span class=l>${{ env.HUGO_VERSION }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>extended</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Checkout Source Code</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>submodules</span><span class=p>:</span><span class=w> </span><span class=l>recursive</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>fetch-depth</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build with Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=c># For maximum backward compatibility with Hugo modules</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>HUGO_ENVIRONMENT</span><span class=p>:</span><span class=w> </span><span class=l>production</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>HUGO_ENV</span><span class=p>:</span><span class=w> </span><span class=l>production</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>hugo --minify --gc</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy 🚀</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-gh-pages@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c># https://github.com/peaceiris/actions-gh-pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>deploy_key</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.PAGES_DEPLOY_KEY }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>external_repository</span><span class=p>:</span><span class=w> </span><span class=l>will4j/will4j.github.io</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>publish_dir</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>publish_branch</span><span class=p>:</span><span class=w> </span><span class=l>main</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>user_name</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;github-actions[bot]&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>user_email</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;github-actions[bot]@users.noreply.github.com&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>full_commit_message</span><span class=p>:</span><span class=w> </span><span class=l>${{ github.event.head_commit.message }}</span></span></span></code></pre></td></tr></table></div></div><h2 id=总结>总结</h2><p>通过使用 Hugo 和 FixIt 主题创建博客站点，大量减少了网站搭建需要做的重复工作，同时 Hugo 也预留了充分的扩展方式，用户具备极大的自定义空间。</p><p>GitHub 工作流的引入，使作者可以专注于博客写作本身，本地预览后提交代码即可触发博客更新发布，整体工作流程如下：</p><p><img loading=lazy src=/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-write-flow.png srcset="/posts/create-blog-with-hugo-and-theme-fixit/images/hugo-write-flow.png?size=small, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-write-flow.png?size=medium 1.5x, /posts/create-blog-with-hugo-and-theme-fixit/images/hugo-write-flow.png?size=large 2x" sizes=auto data-title=博客写作流程 data-alt=博客写作流程 style="--width:1204px;--aspect-ratio:1204 / 852;background:url(/svg/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title,this.alt=this.dataset.alt;for(const e of["style","data-title","data-alt","onerror","onload"])this.removeAttribute(e)'></p><h2 id=参考资料>参考资料</h2><p>[1]: <a href=https://gohugo.io/about/what-is-hugo/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：What is Hugo</a><br>[2]: <a href=https://github.com/gohugoio/hugo target=_blank rel="external nofollow noopener noreferrer">GitHub: Hugo 源代码仓库</a><br>[3]: <a href=https://gohugo.io/about/benefits/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Benefits of static site generators</a><br>[4]: <a href=https://gohugo.io/installation/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Installation</a><br>[5]: <a href=https://gohugo.io/hugo-pipes/transpile-sass-to-css/#dart-sass target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Transpile Sass to CSS</a><br>[6]: <a href=https://themes.gohugo.io/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Hugo 主题站</a><br>[7]: <a href=https://github.com/hugo-fixit/FixIt target=_blank rel="external nofollow noopener noreferrer">GitHub: FixIt 源代码仓库</a><br>[8]: <a href=https://gohugo.io/commands/hugo/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Hugo 命令行工具</a><br>[9]: <a href=https://gohugo.io/getting-started/directory-structure/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Hugo 目录结构</a><br>[10]: <a href=https://gohugo.io/getting-started/configuration/#configuration-directory target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Hugo 配置文件目录</a><br>[11]: <a href=https://gohugo.io/hugo-modules/configuration/#module-configuration-mounts target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Hugo 目录挂载</a><br>[12]: <a href=https://gohugo.io/content-management/page-bundles/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Page bundles</a><br>[13]: <a href=https://gohugo.io/content-management/front-matter/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：前置页</a><br>[14]: <a href=https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter target=_blank rel="external nofollow noopener noreferrer">FixIt 官方文档：前置页配置</a><br>[15]: <a href=https://gohugo.io/getting-started/configuration/#all-configuration-settings target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：Hugo 定义变量列表</a><br>[16]: <a href=https://fixit.lruihao.cn/documentation/basics/#theme-configuration target=_blank rel="external nofollow noopener noreferrer">FixIt 官方文档：主题配置</a><br>[17]: <a href=https://fontawesome.com/icons target=_blank rel="external nofollow noopener noreferrer">FontAwesome 图标</a><br>[18]: <a href=https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/managing-deploy-keys#set-up-deploy-keys target=_blank rel="external nofollow noopener noreferrer">GitHub 文档：设置部署密钥</a><br>[19]: <a href=https://gohugo.io/hosting-and-deployment/hosting-on-github/ target=_blank rel="external nofollow noopener noreferrer">Hugo 官方文档：通过 GitHub Pages 部署</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="更新于 2023-11-22 14:34:16">更新于 2023-11-22&nbsp;</span></div></div><div class=post-info-line><div class=post-info-md><span><a href=/posts/create-blog-with-hugo-and-theme-fixit/index.md title=阅读原始文档 class=link-to-markdown>阅读原始文档</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://will4j.github.io/posts/create-blog-with-hugo-and-theme-fixit/ data-title="使用 Hugo 和 FixIt 主题创建个人博客" data-hashtags=Hugo,FixIt><i class="fa-brands fa-twitter fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://will4j.github.io/posts/create-blog-with-hugo-and-theme-fixit/ data-hashtag=Hugo><i class="fa-brands fa-facebook-square fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://will4j.github.io/posts/create-blog-with-hugo-and-theme-fixit/ data-title="使用 Hugo 和 FixIt 主题创建个人博客"><i class="fa-brands fa-weibo fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/hugo/ class=post-tag>Hugo</a><a href=/tags/fixit/ class=post-tag>FixIt</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/python-decorator-explained/ class=post-nav-item rel=prev title="Python 装饰器详解"><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i>Python 装饰器详解</a></div></div><div id=comments><div id=giscus><script src=https://giscus.app/client.js data-repo=will4j/blog-comment-base data-repo-id=R_kgDOKus4vg data-category="Blog Comments" data-category-id=DIC_kwDOKus4vs4CbCP2 data-mapping=pathname data-strict=0 data-theme=preferred_color_scheme data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-lang=zh-CN data-loading=lazy crossorigin=anonymous async defer></script></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://giscus.app/ rel="external nofollow noopener noreferrer">giscus</a>.</noscript></div></article></main><footer class=footer><div class=footer-container><div class="footer-line powered order-1">由 <a href=https://gohugo.io/ target=_blank rel="external nofollow noopener noreferrer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/hugo-fixit/FixIt target=_blank rel=external title="FixIt v0.2.18-lts.4"><img class=fixit-icon src=/fixit.min.svg alt="FixIt logo">&nbsp;FixIt</a></div><div class="footer-line copyright order-last" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
+<span itemprop=copyrightYear>2023</span><span class=author itemprop=copyrightHolder>
+<a href=https://github.com/will4j target=_blank rel="external nofollow noopener noreferrer">水王</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class="footer-line statistics order-first"><span class=site-time title=网站运行中……><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden=true></i><span class="run-times ms-1">网站运行中……</span></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label=回到顶部><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class="variant-numeric d-none">0%</span></div><div class="fixed-button view-comments d-none" role=button aria-label=查看评论><i class="fa-solid fa-comment fa-fw" aria-hidden=true></i></div></div><a href=https://github.com/will4j title="Visit Me on GitHub" target=_blank rel="external nofollow" class="github-corner left d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27L250 250V0z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentcolor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4l13.9-13.8C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8z" fill="currentcolor" class="octo-body"/></svg></a><div id=mask></div><noscript><div class=noscript-warning>FixIt 主题在启用 JavaScript 的情况下效果最佳。</div></noscript></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css><script src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js async defer></script><script src=https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js defer></script><script src=https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js defer></script><script src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async defer></script><script>window.config={code:{copyTitle:"复制到剪贴板",editLockTitle:"锁定可编辑代码块",editUnLockTitle:"解锁可编辑代码块",editable:!0,maxShownLines:10},comment:{enable:!0,expired:!1,giscus:{darkTheme:"dark",lightTheme:"light"}},cookieconsent:{content:{dismiss:"同意",link:"了解更多",message:"本网站使用 Cookies 来改善您的浏览体验。"},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},data:{"typeit-header-desktop":"程序员水王","typeit-header-title-mobile":"程序员水王"},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!1,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:30,threshold:.3,type:"fuse",useExtendedSearch:!1},siteTime:"2023-11-16T07:40:29+08:00",typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"typeit-header-desktop":["typeit-header-desktop"],"typeit-header-title-mobile":["typeit-header-title-mobile"]},duration:-1,loop:!1,speed:100}}</script><script src=/js/theme.min.js defer></script></body></html>
