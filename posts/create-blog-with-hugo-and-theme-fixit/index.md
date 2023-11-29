@@ -1,7 +1,7 @@
 # 使用 Hugo 和 FixIt 主题创建个人博客
 
 
-Hugo[[1]]是一个用 go 语言编写的开源[[2]]网站构建框架，截止目前GitHub星数超过70k，它具有功能强大的模板系统、丰富的主题、完善的文档以及全平台支持的客户端，提供开箱即用的分类系统、评论系统、代码高亮、多语言支持等功能，非常适合用来搭建博客网站。
+Hugo [[1]]是一个用 go 语言编写的开源[[2]]网站构建框架，截止目前 GitHub 星数超过70k，它具有功能强大的模板系统、丰富的主题、完善的文档以及全平台支持的客户端，提供开箱即用的分类系统、评论系统、代码高亮、多语言支持等功能，非常适合用来搭建博客网站。
 
 在本地撰写阶段，借助 Hugo 内置服务器可以做到毫秒级热更新，实现所见即所得。同时，得益于 Hugo 采用静态站点生成[[3]]的架构，Hugo 站点可以很容易的部署到各种 HTTP 服务器，且通过本地预览即可确认线上部署效果。
 
@@ -399,15 +399,18 @@ cdn:
 ```
 
 ## 博客部署
+
+### 部署密钥配置
 首先需要配置部署密钥[[18]]，在 GitHub Pages 仓库添加公钥，并允许写入权限：
 
 ![添加部署密钥](images/add-deploy-key.jpg)
 
-在博客仓库添加 Actions 密钥中添加 GitHub Pages 仓库私钥：
+在博客仓库 Actions 密钥中添加 GitHub Pages 仓库部署私钥：
 
 ![添加仓库密钥](images/new-repo-secret.jpg)
 
-在博客仓库增加 GitHub Actions [[19]]：
+### GitHub Action 配置
+在博客仓库增加 Workflows 配置文件[[19]]：
 ```yaml
 # .github/workflows/deploy-to-github-pages.yaml
 ---
@@ -477,32 +480,32 @@ jobs:
 ```
 
 ## 总结
-通过使用 Hugo 和 FixIt 主题创建博客站点，大量减少了网站搭建需要做的重复工作，同时 Hugo 也预留了充分的扩展方式，用户具备极大的自定义空间。
+通过使用 Hugo 和 FixIt 主题创建博客站点，大量减少了网站搭建需要做的重复工作，同时 Hugo 也具备灵活扩展的能力，给用户提供了极大的自定义空间。
 
 GitHub 工作流的引入，使作者可以专注于博客写作本身，本地预览后提交代码即可触发博客更新发布，整体工作流程如下：
 
 ![博客写作流程](images/hugo-write-flow.png)
 
 ## 参考资料
-\[1\]: [Hugo 官方文档：What is Hugo][1]  
-\[2\]: [GitHub: Hugo 源代码仓库][2]  
-\[3\]: [Hugo 官方文档：Benefits of static site generators][3]  
-\[4\]: [Hugo 官方文档：Installation][4]  
-\[5\]: [Hugo 官方文档：Transpile Sass to CSS][5]  
-\[6\]: [Hugo 官方文档：Hugo 主题站][6]  
-\[7\]: [GitHub: FixIt 源代码仓库][7]  
-\[8\]: [Hugo 官方文档：Hugo 命令行工具][8]  
-\[9\]: [Hugo 官方文档：Hugo 目录结构][9]  
-\[10\]: [Hugo 官方文档：Hugo 配置文件目录][10]  
-\[11\]: [Hugo 官方文档：Hugo 目录挂载][11]  
-\[12\]: [Hugo 官方文档：Page bundles][12]  
-\[13\]: [Hugo 官方文档：前置页][13]  
-\[14\]: [FixIt 官方文档：前置页配置][14]  
-\[15\]: [Hugo 官方文档：Hugo 定义变量列表][15]  
-\[16\]: [FixIt 官方文档：主题配置][16]  
-\[17\]: [FontAwesome 图标][17]  
-\[18\]: [GitHub 文档：设置部署密钥][18]  
-\[19\]: [Hugo 官方文档：通过 GitHub Pages 部署][19]  
+\[1\]. [Hugo 官方文档：What is Hugo][1]  
+\[2\]. [GitHub: Hugo 源代码仓库][2]  
+\[3\]. [Hugo 官方文档：Benefits of static site generators][3]  
+\[4\]. [Hugo 官方文档：Installation][4]  
+\[5\]. [Hugo 官方文档：Transpile Sass to CSS][5]  
+\[6\]. [Hugo 官方文档：Hugo 主题站][6]  
+\[7\]. [GitHub: FixIt 源代码仓库][7]  
+\[8\]. [Hugo 官方文档：Hugo 命令行工具][8]  
+\[9\]. [Hugo 官方文档：Hugo 目录结构][9]  
+\[10\]. [Hugo 官方文档：Hugo 配置文件目录][10]  
+\[11\]. [Hugo 官方文档：Hugo 目录挂载][11]  
+\[12\]. [Hugo 官方文档：Page bundles][12]  
+\[13\]. [Hugo 官方文档：前置页][13]  
+\[14\]. [FixIt 官方文档：前置页配置][14]  
+\[15\]. [Hugo 官方文档：Hugo 定义变量列表][15]  
+\[16\]. [FixIt 官方文档：主题配置][16]  
+\[17\]. [FontAwesome 图标][17]  
+\[18\]. [GitHub 文档：设置部署密钥][18]  
+\[19\]. [Hugo 官方文档：通过 GitHub Pages 部署][19]  
 
 [1]:https://gohugo.io/about/what-is-hugo/
 [2]:https://github.com/gohugoio/hugo
