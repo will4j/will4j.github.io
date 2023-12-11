@@ -89,6 +89,6 @@ jobs:
 
 ---
 
-> 作者: [水王](https://github.com/will4j)  
+> 作者: 水王  
 > URL: https://will4j.github.io/posts/github-contribution-grid-snake/  
 

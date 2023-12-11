@@ -530,6 +530,6 @@ GitHub 工作流的引入，使作者可以专注于博客写作本身，本地�
 
 ---
 
-> 作者: [水王](https://github.com/will4j)  
+> 作者: 水王  
 > URL: https://will4j.github.io/posts/create-blog-with-hugo-and-theme-fixit/  
 

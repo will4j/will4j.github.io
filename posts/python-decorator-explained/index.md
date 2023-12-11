@@ -721,6 +721,6 @@ Python装饰器初看很简单，但是要构建一个通用且稳定的装饰�
 
 ---
 
-> 作者: [水王](https://github.com/will4j)  
+> 作者: 水王  
 > URL: https://will4j.github.io/posts/python-decorator-explained/  
 

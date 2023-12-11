@@ -418,6 +418,6 @@ let result = x.parse::<u32>().expect("can't parse to integer");
 
 ---
 
-> 作者: [水王](https://github.com/will4j)  
+> 作者: 水王  
 > URL: https://will4j.github.io/posts/rust-kata-number-guessing-game/  
 
